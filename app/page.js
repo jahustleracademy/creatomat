@@ -3,6 +3,7 @@ import ListItem from "@/components/ListItem";
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import product_demo from "@/public/assets/product_demo.png";
+import clientPromise from "@/libs/mongo";
 
 export default function Home() {
   const isLoggedIn = true;
