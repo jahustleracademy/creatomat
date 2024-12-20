@@ -7,7 +7,6 @@ import product_demo from "@/public/assets/product_demo.png";
 export default function Home() {
   const isLoggedIn = true;
   const name = "Artur";
-  const greetings = `Hallo ${isLoggedIn ? name : "Creative-Experte"}`;
   const pricingFeaturesList = [
     "Creative Skripte in Sekunden und nicht Stunden",
     "Unendliche Anzahl an Creatives",
@@ -39,7 +38,7 @@ export default function Home() {
         <Image
           src={product_demo}
           alt="Product demo"
-          className="rounded-3xl saturate-200"
+          className="rounded-3xl grayscale"
         />
         <div>
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
