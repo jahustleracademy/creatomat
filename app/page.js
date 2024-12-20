@@ -1,6 +1,8 @@
 import ButtonLogin from "@/components/ButtonLogin";
 import ListItem from "@/components/ListItem";
 import FAQListItem from "@/components/FAQListItem";
+import Image from "next/image";
+import product_demo from "@/public/assets/product_demo.png";
 
 export default function Home() {
   const isLoggedIn = true;
@@ -16,7 +18,7 @@ export default function Home() {
     <main>
       {/* HEADER */}
       <section className="bg-base-200">
-        <div className="flex justify-between items-center px-8 py-2 max-w-3xl mx-auto">
+        <div className="flex justify-between items-center px-8 py-2 max-w-5xl mx-auto">
           <div className="font-bold text-xl">Creatomat</div>
           <div className="space-x-4 max-md:hidden">
             <a className="link link-hover" href="#pricing">
@@ -30,15 +32,27 @@ export default function Home() {
         </div>
       </section>
       {/* HERO */}
-      <section className="text-center py-32 px-8 max-w-3xl mx-auto" id="hero">
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">Creatomat</h1>
-        <div className="opacity-90 mb-10">
-          Hier kannst du deine Creatives erstellen, egal ob Video oder
-          Bildcreatives. <br />
-          Erstelle Creatives in Minuten und nicht Stunden!
+      <section
+        className="text-center lg:text-left py-32 px-8 max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start"
+        id="hero"
+      >
+        <Image
+          src={product_demo}
+          alt="Product demo"
+          className="rounded-3xl saturate-200"
+        />
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
+            Creatomat
+          </h1>
+          <div className="opacity-90 mb-10">
+            Hier kannst du deine Creatives erstellen, egal ob Video oder
+            Bildcreatives. <br />
+            Erstelle Creatives in Minuten und nicht Stunden!
+          </div>
+          <br></br>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
         </div>
-        <br></br>
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
       </section>
 
       {/* PRICING */}
