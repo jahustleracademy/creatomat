@@ -3,12 +3,9 @@ import ListItem from "@/components/ListItem";
 import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import product_demo from "@/public/assets/product_demo.png";
-import clientPromise from "@/libs/mongo";
 import { auth } from "@/auth";
 
 export default async function Home() {
-  const isLoggedIn = true;
-  const name = "Artur";
   const pricingFeaturesList = [
     "Creative Skripte in Sekunden und nicht Stunden",
     "Unendliche Anzahl an Creatives",
