@@ -4,8 +4,9 @@ import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
 import product_demo from "@/public/assets/product_demo.png";
 import clientPromise from "@/libs/mongo";
+import { auth } from "@/auth";
 
-export default function Home() {
+export default async function Home() {
   const isLoggedIn = true;
   const name = "Artur";
   const pricingFeaturesList = [
@@ -13,6 +14,8 @@ export default function Home() {
     "Unendliche Anzahl an Creatives",
     "24/7 Support",
   ];
+
+  const session = await auth();
 
   return (
     <main>
@@ -28,7 +31,7 @@ export default function Home() {
               FAQ
             </a>
           </div>
-          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          <ButtonLogin session={session} />
         </div>
       </section>
       {/* HERO */}
@@ -51,7 +54,7 @@ export default function Home() {
             Erstelle Creatives in Minuten und nicht Stunden!
           </div>
           <br></br>
-          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          <ButtonLogin session={session} />
         </div>
       </section>
 
@@ -78,11 +81,7 @@ export default function Home() {
                 <ListItem key={priceItem}>{priceItem}</ListItem>
               ))}
             </ul>
-            <ButtonLogin
-              isLoggedIn={isLoggedIn}
-              name={name}
-              extraStyle={"w-full"}
-            />
+            <ButtonLogin session={session} extraStyle={"w-full"} />
           </div>
         </div>
       </section>
